@@ -5,8 +5,8 @@
 
 - name: CentOS7 specific tasks
   include: CentOS7.yml 
-  when: ({{ ansible_distribution }} == "CentOS") and ({{ ansible_distribution_major_version }} == "7")"
+  when: (ansible_distribution == "CentOS") and (ansible_distribution_major_version == "7")
 
 - name: Ubuntu14 specific tasks
   include: Ubuntu14.yml 
-  when: ({{ ansible_distribution }} == "Ubuntu") and ({{ ansible_distribution_major_version }} == "14")"
+  when: (ansible_distribution == "Ubuntu") and (ansible_distribution_major_version == "14")
