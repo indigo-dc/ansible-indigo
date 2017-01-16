@@ -1,3 +1,4 @@
+---
 
 - name: Add INDIGO-base YUM repository
   yum_repository:
@@ -36,11 +37,16 @@
     gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
 
 - name: Install YUM priorities package
-  package: yum-plugin-priorities state=latest
+  yum:
+    name: yum-plugin-priorities
+    state: latest
 
 - name: Install OpenStack RDO (CentOS)
-  package: name=centos-release-openstack-mitaka
+  yum: 
+    name: centos-release-openstack-mitaka
   when: (indigo_version_major == "1")
 
 - name: Install EPEL repository (RedHat distros)
-  package: name=epel-release state=latest
+  yum:
+    name: epel-release
+    state: latest
