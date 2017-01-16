@@ -19,3 +19,7 @@
     repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/1/ubuntu/ trusty-updates main third-party"
     state: present
     filename: indigo
+
+- apt_key:
+    url: "http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc"
+    state: present
