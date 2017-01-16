@@ -1,0 +1,11 @@
+---
+- fail:
+    msg="Bailing out.. this play requires <<indigo_version_major>>"
+    when: indigo_version_major is undefined
+
+- assert:
+    that: "ansible_version.full | version_compare('1.6', '>=')"
+    msg: "You must update Ansible to at least 1.6 to use this version of INDIGO repository setup."
+
+- name: OS specific tasks
+  include: "{{ ansible_distribution }}{{ ansible_distribution_major_version }}.yml"
