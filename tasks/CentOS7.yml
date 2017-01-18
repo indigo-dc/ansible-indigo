@@ -46,7 +46,7 @@
     name: centos-release-openstack-mitaka
   when: (indigo_version_major == "1")
 
-- name: Install EPEL repository (RedHat distros)
-  yum:
-    name: epel-release
-    state: latest
+#- name: Install EPEL repository (RedHat distros)
+#  yum:
+#    name: epel-release
+#    state: latest
