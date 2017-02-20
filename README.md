@@ -19,7 +19,7 @@ Available variables are listed below, along with default values:
 
 ## Example Playbook
 
-    - hosts: servers
+    - hosts: all
       roles:
         - { role: indigo-repo }
 
