@@ -12,6 +12,7 @@ An Ansible role that deploys INDIGO-DataCloud repository.
 Available variables are listed below, along with default values:
 
     indigo_release: 1
+    enable_openstack_distro_repo: true
 
 ## Dependencies
 
@@ -21,7 +22,7 @@ Available variables are listed below, along with default values:
 
     - hosts: all
       roles:
-        - { role: indigo-repo }
+        - { role: indigo-dc.indigo-repo }
 
 ## License
 
