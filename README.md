@@ -5,7 +5,7 @@ An Ansible role that deploys INDIGO-DataCloud repository.
 
 ## Supported platforms
 
-CentOS7 & Ubuntu 14.04
+    CentOS7 & Ubuntu 14.04
 
 ## Role Variables
 
