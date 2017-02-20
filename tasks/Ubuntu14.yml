@@ -6,11 +6,11 @@
 
 - name: Install OpenStack cloud-archive ppa (Debian distros)
   command: "add-apt-repository -y cloud-archive:mitaka"
-  when: (indigo_version_major == "1")
+  when: (indigo_release == "1")
 
 - name: Add INDIGO-base APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_version_major }}/ubuntu/ trusty main third-party"
+    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ trusty main third-party"
     state: present
     filename: indigo
 

@@ -1,7 +1,7 @@
 ---
 - fail:
-    msg: "Exiting: <<indigo_version_major>> not defined!"
-  when: indigo_version_major is not defined
+    msg: "Exiting: <<indigo_release>> not defined!"
+  when: indigo_release is not defined
 
 - assert:
     that: "ansible_version.full | version_compare('2.1', '>=')"
