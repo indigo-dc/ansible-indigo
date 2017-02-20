@@ -44,7 +44,7 @@
 - name: Install OpenStack RDO (CentOS)
   yum: 
     name: centos-release-openstack-mitaka
-  when: (indigo_release == "1")
+  when: enable_openstack_distro_repo
 
 #- name: Install EPEL repository (RedHat distros)
 #  yum:

@@ -6,7 +6,7 @@
 
 - name: Install OpenStack cloud-archive ppa (Debian distros)
   command: "add-apt-repository -y cloud-archive:mitaka"
-  when: (indigo_release == "1")
+  when: enable_openstack_distro_repo
 
 - name: Add INDIGO-base APT repository
   apt_repository:

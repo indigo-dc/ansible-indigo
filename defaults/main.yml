@@ -1,2 +1,3 @@
 ---
 indigo_release: 1
+enable_openstack_distro_repo: true
