@@ -13,6 +13,8 @@ Available variables are listed below, along with default values:
 
     indigo_release: 1
     enable_openstack_distro_repo: true
+    enable_testing_repo: true
+    enable_preview_repo: true
 
 ## Dependencies
 

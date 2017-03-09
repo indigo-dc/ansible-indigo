@@ -36,6 +36,32 @@
     gpgcheck: yes
     gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
 
+- name: Add INDIGO-testing YUM repository
+  yum_repository:
+    name: "INDIGO-{{ indigo_release }}-testing"
+    description: "INDIGO-{{ indigo_release }} - testing"
+    file: indigo1-testing
+    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/centos7/$basearch/testing"
+    protect: yes
+    enabled: yes
+    priority: 40
+    gpgcheck: yes
+    gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
+  when: enable_testing_repo
+
+- name: Add INDIGO-preview YUM repository
+  yum_repository:
+    name: "INDIGO-{{ indigo_release }}-preview"
+    description: "INDIGO-{{ indigo_release }} - preview"
+    file: indigo1-third-party
+    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/centos7/$basearch/preview"
+    protect: yes
+    enabled: yes
+    priority: 40
+    gpgcheck: yes
+    gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
+  when: enable_preview_repo
+
 - name: Install YUM priorities package
   yum:
     name: yum-plugin-priorities
