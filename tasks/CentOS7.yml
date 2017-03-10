@@ -41,7 +41,7 @@
     name: "INDIGO-{{ indigo_release }}-testing"
     description: "INDIGO-{{ indigo_release }} - testing"
     file: indigo1-testing
-    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/centos7/$basearch/testing"
+    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo-testing/{{ indigo_release }}/centos7/$basearch/updates"
     protect: yes
     enabled: yes
     priority: 40
@@ -54,7 +54,7 @@
     name: "INDIGO-{{ indigo_release }}-preview"
     description: "INDIGO-{{ indigo_release }} - preview"
     file: indigo1-third-party
-    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/centos7/$basearch/preview"
+    baseurl: "http://repo.indigo-datacloud.eu/repository/indigo-preview/{{ indigo_release }}/centos7/$basearch/updates"
     protect: yes
     enabled: yes
     priority: 40
