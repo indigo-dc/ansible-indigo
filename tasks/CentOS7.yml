@@ -45,7 +45,7 @@
     protect: yes
     enabled: yes
     priority: 40
-    gpgcheck: yes
+    gpgcheck: no
     gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
   when: enable_testing_repo
 
@@ -58,7 +58,7 @@
     protect: yes
     enabled: yes
     priority: 40
-    gpgcheck: yes
+    gpgcheck: no
     gpgkey: http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc
   when: enable_preview_repo
 
