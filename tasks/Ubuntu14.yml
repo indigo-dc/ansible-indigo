@@ -16,7 +16,7 @@
 
 - name: Add INDIGO-updates APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/1/ubuntu/ trusty-updates main third-party"
+    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ trusty-updates main third-party"
     state: present
     filename: indigo
 
