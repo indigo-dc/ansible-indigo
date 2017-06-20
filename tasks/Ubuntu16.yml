@@ -8,6 +8,10 @@
   command: "add-apt-repository -y cloud-archive:newton"
   when: enable_openstack_distro_repo
 
+- apt_key:
+    url: "http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc"
+    state: present
+
 - name: Add INDIGO base APT repository
   apt_repository:
     repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ xenial main third-party"
@@ -47,7 +51,3 @@
     state: present
     filename: indigo-preview
   when: enable_preview_repo
-
-- apt_key:
-    url: "http://repo.indigo-datacloud.eu/repository/RPM-GPG-KEY-indigodc"
-    state: present
