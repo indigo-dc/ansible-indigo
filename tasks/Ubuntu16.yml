@@ -26,14 +26,14 @@
 
 - name: Add INDIGO-testing base APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo-testing/{{ indigo_release}}/ubuntu/ xenial main third-party"
+    repo: "deb [arch=amd64 trusted=yes] http://repo.indigo-datacloud.eu/repository/indigo-testing/{{ indigo_release}}/ubuntu/ xenial main third-party"
     state: present
     filename: indigo-testing
   when: enable_testing_repo
 
 - name: Add INDIGO-testing updates APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo-testing/{{ indigo_release}}/ubuntu/ xenial-updates main third-party"
+    repo: "deb [arch=amd64 trusted=yes] http://repo.indigo-datacloud.eu/repository/indigo-testing/{{ indigo_release}}/ubuntu/ xenial-updates main third-party"
     state: present
     filename: indigo-testing
   when: enable_testing_repo
