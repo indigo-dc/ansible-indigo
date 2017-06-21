@@ -23,4 +23,17 @@
   package:
     name: "{{ item }}"
   with_items:
-    - "{{ pkglist }}"
+    - "{{ pkglist | default([]) }}"
+  when: pkglist is defined
+
+- name: Get package versions for Ubuntu
+  shell: dpkg-query --showformat='${Package} ${Version}\n' --show "{{ item }}"
+  with_items:
+    - "{{ pkglist | default([]) }}"
+  when: (ansible_distribution == "Ubuntu") and (pkglist is defined)
+
+- name: Get package versions for CentOS7
+  shell: rpm -qa --qf '%{NAME} %{VERSION}\n' "{{ item }}"
+  with_items:
+    - "{{ pkglist | default([]) }}"
+  when: (ansible_distribution == "CentOS") and (pkglist is defined)
