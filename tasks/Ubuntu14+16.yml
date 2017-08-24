@@ -10,13 +10,13 @@
 
 - name: Add INDIGO-base APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ trusty main third-party"
+    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ {{ ansible_distribution_release }} main third-party"
     state: present
     filename: indigo
 
 - name: Add INDIGO-updates APT repository
   apt_repository:
-    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ trusty-updates main third-party"
+    repo: "deb [arch=amd64] http://repo.indigo-datacloud.eu/repository/indigo/{{ indigo_release }}/ubuntu/ {{ ansible_distribution_release }}-updates main third-party"
     state: present
     filename: indigo
 
