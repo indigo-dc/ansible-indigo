@@ -11,5 +11,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - trusty
+    - xenial
 dependencies:
-  - { role: 'geerlingguy.repo-epel', when: ansible_distribution == "CentOS" }
+  - role: 'geerlingguy.repo-epel'
+    when: ansible_distribution == "CentOS"
