@@ -1,5 +1,6 @@
 ---
 indigo_release: 1
 enable_openstack_distro_repo: true
+openstack_release: newton
 enable_testing_repo: false
 enable_preview_repo: false
