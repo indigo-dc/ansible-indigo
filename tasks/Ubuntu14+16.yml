@@ -4,8 +4,8 @@
     name: software-properties-common
     state: latest
 
-- name: Install OpenStack cloud-archive ppa (Debian distros)
-  command: "add-apt-repository -y cloud-archive:mitaka"
+- name: Install OpenStack cloud-archive ppa for {{ openstack_release }} (Debian distros)
+  command: "add-apt-repository -y cloud-archive:{{ openstack_release }}"
   when: enable_openstack_distro_repo
 
 - name: Add INDIGO-base APT repository
